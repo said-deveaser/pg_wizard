@@ -1,1 +1,0 @@
-export { sumTheSum } from './test';

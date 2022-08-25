@@ -1,7 +1,7 @@
-import {Pool} from 'pg'
-import {ModelProps} from "../interfaces/interafaces";
-import {Select} from "./Select";
-import {DbBase} from "./DbBase";
+import { Pool } from 'pg'
+import { ModelProps } from '../interfaces/interafaces'
+import { Select } from './Select'
+import { DbBase } from './DbBase'
 
 export class Model<Row extends Record<string, any>> extends DbBase {
   private readonly selectTool: Select<Row>
