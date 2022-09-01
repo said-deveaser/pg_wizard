@@ -1,9 +1,9 @@
-import {Pool, QueryResult} from "pg";
-import {DbBase} from "./DbBase";
-import {DbBaseProps} from "../interfaces/interafaces";
+import { Pool, QueryResult } from 'pg'
+import { DbBase } from './DbBase'
+import { DbBaseProps } from '../interfaces/interafaces'
 
 export class Select<Row extends Record<string, any>> extends DbBase {
-  private pool: Pool
+  private readonly pool: Pool
 
   constructor(pool: Pool, props: DbBaseProps) {
     super(props)
@@ -20,6 +20,7 @@ export class Select<Row extends Record<string, any>> extends DbBase {
     })
     //
     sql += ` FROM ${this.schemaName}.${this.tableName}`
+    console.log(sql)
     return await this.pool.query<Row[]>(sql)
   }
 }
